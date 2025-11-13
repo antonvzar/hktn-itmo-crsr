@@ -1,0 +1,186 @@
+.card {
+  background: #fff;
+  border-radius: 16px;
+  border: 1px solid #e6ebf4;
+  box-shadow: 0 10px 24px rgba(12, 18, 29, 0.08);
+  padding: 20px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.topRow {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.leadTitle {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 600;
+  color: #0c121d;
+}
+
+.meta {
+  margin-top: 12px;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 12px;
+  border-radius: 999px;
+  font-weight: 600;
+  font-size: 13px;
+}
+
+.budgetBadge {
+  background: linear-gradient(135deg, rgba(31, 113, 255, 0.12), rgba(31, 113, 255, 0.28));
+  color: #1f71ff;
+}
+
+.exclusiveBadge {
+  background: rgba(16, 185, 129, 0.18);
+  color: #0f766e;
+}
+
+.metaItem {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 12px;
+  border-radius: 10px;
+  background: #f5f7fd;
+  color: #4567a1;
+  font-weight: 500;
+  font-size: 13px;
+}
+
+.score {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 6px;
+}
+
+.scoreBadge {
+  width: 72px;
+  height: 72px;
+  border-radius: 20px;
+  display: grid;
+  place-items: center;
+  font-size: 22px;
+  font-weight: 700;
+  color: #fff;
+}
+
+.scoreHigh {
+  background: linear-gradient(145deg, #22c55e, #16a34a);
+}
+
+.scoreMedium {
+  background: linear-gradient(145deg, #f97316, #ea580c);
+}
+
+.scoreLow {
+  background: linear-gradient(145deg, #ef4444, #b91c1c);
+}
+
+.scoreLabel {
+  font-size: 12px;
+  font-weight: 600;
+  color: #6b7280;
+  letter-spacing: 0.4px;
+  text-transform: uppercase;
+}
+
+.contactRow {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.contactInfo {
+  display: grid;
+  gap: 6px;
+  min-width: 240px;
+}
+
+.contactName {
+  font-weight: 600;
+  color: #0c121d;
+}
+
+.contactDetail {
+  color: #6b7280;
+  font-size: 14px;
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.openButton {
+  border-radius: 10px !important;
+  padding: 0 20px;
+  font-weight: 600;
+  box-shadow: 0 10px 30px rgba(31, 113, 255, 0.3);
+}
+
+.bookmarkButton {
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  border: 1px solid rgba(69, 103, 161, 0.2) !important;
+  color: #4567a1 !important;
+  background: #f5f7fd !important;
+  display: grid;
+  place-items: center;
+  transition: all 0.3s ease;
+}
+
+.bookmarkButton:hover {
+  border-color: rgba(31, 113, 255, 0.4) !important;
+  color: #1f71ff !important;
+  background: rgba(31, 113, 255, 0.12) !important;
+}
+
+@media (max-width: 575px) {
+  .card {
+    padding: 18px 16px;
+  }
+
+  .topRow {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .score {
+    align-items: flex-start;
+  }
+
+  .contactRow {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .actions {
+    width: 100%;
+  }
+
+  .openButton {
+    flex: 1;
+    width: 100%;
+  }
+}

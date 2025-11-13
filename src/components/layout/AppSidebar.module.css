@@ -1,0 +1,90 @@
+@media (prefers-reduced-motion: reduce) {
+  * {
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+  }
+}
+
+.sidebar {
+  height: 100%;
+  background: #fff;
+  border-right: 1px solid #e6ebf4;
+  display: flex;
+  flex-direction: column;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 16px 24px;
+  text-decoration: none;
+  color: inherit;
+}
+
+.brandIcon {
+  width: 28px;
+  height: 28px;
+  display: grid;
+  place-items: center;
+  border-radius: 8px;
+  background: #1f71ff;
+  color: #fff;
+  font-weight: 700;
+  font-size: 18px;
+}
+
+.brandTitle {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  color: #0c121d;
+  font-weight: 700;
+  font-size: 18px;
+  letter-spacing: -0.27px;
+}
+
+.brandSubtitle {
+  font-size: 12px;
+  font-weight: 500;
+  color: #4567a1;
+}
+
+.menu {
+  flex: 1;
+  padding: 24px 16px;
+}
+
+.menu :global(.ant-menu) {
+  border-inline-end: none !important;
+  background: transparent;
+}
+
+.menu :global(.ant-menu-item) {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  border-radius: 8px !important;
+  margin-bottom: 8px;
+  font-weight: 500;
+  color: #4567a1;
+}
+
+.menu :global(.ant-menu-item-selected) {
+  color: #1f71ff !important;
+  background: rgba(31, 113, 255, 0.1) !important;
+}
+
+.menu :global(.ant-menu-item:hover) {
+  color: #1f71ff !important;
+  background: rgba(31, 113, 255, 0.08) !important;
+}
+
+.menu :global(.ant-menu-item-icon) {
+  font-size: 20px;
+}
+
+.menu :global(.ant-menu-item span) {
+  flex: 1;
+}
+

@@ -1,0 +1,75 @@
+.appShell {
+  min-height: 100vh;
+  display: flex;
+  background: #f4f6fb;
+}
+
+.sidebar {
+  width: 264px;
+  flex-shrink: 0;
+  background: #fff;
+  border-right: 1px solid #e6ebf4;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  z-index: 30;
+}
+
+.mainArea {
+  flex: 1;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.content {
+  flex: 1;
+  padding: 24px 32px 48px;
+  overflow: auto;
+}
+
+.content > * {
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.sidebarBackdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(12, 18, 29, 0.35);
+  z-index: 20;
+  backdrop-filter: blur(2px);
+}
+
+.sidebarMobile {
+  position: fixed;
+  inset: 0 auto 0 0;
+  transform: translateX(-100%);
+  max-width: 260px;
+}
+
+.sidebarOpen {
+  transform: translateX(0);
+  box-shadow: 0 20px 40px rgba(12, 18, 29, 0.18);
+}
+
+@media (max-width: 1199px) {
+  .content {
+    padding: 24px 24px 40px;
+  }
+}
+
+@media (max-width: 991px) {
+  .content {
+    padding: 20px 20px 32px;
+  }
+
+  .content > * {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 575px) {
+  .content {
+    padding: 16px 16px 28px;
+  }
+}
