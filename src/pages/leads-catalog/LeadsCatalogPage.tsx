@@ -8,6 +8,7 @@ import {
 import { Button, Pagination, Segmented, Select, Space, Typography } from 'antd';
 import LeadFilters, { LeadFiltersValue } from '../../components/leads/LeadFilters';
 import LeadCard, { LeadCardData } from '../../components/leads/LeadCard';
+import LeadContactModal from '../../components/leads/LeadContactModal';
 import styles from './LeadsCatalogPage.module.css';
 
 const { Title, Text } = Typography;
@@ -105,6 +106,8 @@ const LeadsCatalogPage = () => {
   const [sort, setSort] = useState<'fresh' | 'match-desc' | 'budget-desc' | 'budget-asc'>('fresh');
   const [view, setView] = useState<'list' | 'grid'>('list');
   const [currentPage, setCurrentPage] = useState(1);
+  const [selectedLead, setSelectedLead] = useState<Lead | null>(null);
+  const [isContactModalOpen, setIsContactModalOpen] = useState(false);
 
   useEffect(() => {
     setCurrentPage(1);
@@ -180,6 +183,19 @@ const LeadsCatalogPage = () => {
     return sortedLeads.slice(start, start + pageSize);
   }, [sortedLeads, currentPage]);
 
+  const handleOpenContacts = (leadId: string) => {
+    const lead = sortedLeads.find((item) => item.id === leadId);
+    if (lead) {
+      setSelectedLead(lead);
+      setIsContactModalOpen(true);
+    }
+  };
+
+  const handleCloseContacts = () => {
+    setIsContactModalOpen(false);
+    setTimeout(() => setSelectedLead(null), 200);
+  };
+
   const startRange = sortedLeads.length === 0 ? 0 : (currentPage - 1) * pageSize + 1;
   const endRange = Math.min(currentPage * pageSize, sortedLeads.length);
 
@@ -239,7 +255,9 @@ const LeadsCatalogPage = () => {
 
           <div className={view === 'grid' ? styles.leadsGrid : styles.leadsList}>
             {paginatedLeads.length > 0 ? (
-              paginatedLeads.map((lead) => <LeadCard key={lead.id} lead={lead} />)
+              paginatedLeads.map((lead) => (
+                <LeadCard key={lead.id} lead={lead} onOpenContacts={handleOpenContacts} />
+              ))
             ) : (
               <div className={styles.emptyState}>Нет лидов, удовлетворяющих текущим фильтрам.</div>
             )}
@@ -264,6 +282,8 @@ const LeadsCatalogPage = () => {
           </div>
         </div>
       </div>
+
+      <LeadContactModal lead={selectedLead} open={isContactModalOpen} onClose={handleCloseContacts} />
     </div>
   );
 };
