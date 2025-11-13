@@ -1,0 +1,95 @@
+.modalCard {
+  background: #fff;
+  border-radius: 20px;
+  border: 1px solid #e6ebf4;
+  box-shadow: 0 22px 44px rgba(15, 23, 42, 0.16);
+  padding: 24px 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.headerInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.dealMeta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 12px;
+  border-radius: 999px;
+  background: #f5f7fd;
+  color: #4567a1;
+  font-weight: 500;
+  font-size: 13px;
+}
+
+.budgetBadge {
+  background: rgba(31, 113, 255, 0.14);
+  color: #1f71ff;
+}
+
+.contactSection {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.contactRow {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 14px;
+  border-radius: 12px;
+  background: #f5f7fd;
+  color: #0c121d;
+}
+
+.contactLabel {
+  font-weight: 600;
+}
+
+.actions {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 8px;
+}
+
+.primaryAction {
+  height: 46px;
+  border-radius: 12px;
+  font-weight: 600;
+}
+
+.secondaryAction {
+  height: 46px;
+  border-radius: 12px;
+  font-weight: 600;
+}
+
+@media (max-width: 575px) {
+  .modalCard {
+    padding: 20px 22px;
+  }
+
+  .contactRow {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}

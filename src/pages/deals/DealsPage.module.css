@@ -1,0 +1,89 @@
+.page {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  padding-bottom: 48px;
+}
+
+.pageHeader {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.titleGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.newProposalButton {
+  border-radius: 10px;
+  font-weight: 600;
+  box-shadow: 0 12px 26px rgba(31, 113, 255, 0.24);
+}
+
+.tabBar :global(.ant-segmented) {
+  background: #f5f7fd;
+  border-radius: 10px;
+  padding: 4px;
+}
+
+.tabBar :global(.ant-segmented-thumb) {
+  border-radius: 8px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 20px;
+}
+
+.placeholderCard {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  border: 1px dashed #cbd5f5;
+  border-radius: 18px;
+  padding: 48px 24px;
+  background: #f8faff;
+  color: #4567a1;
+  font-weight: 500;
+  text-align: center;
+}
+
+.placeholderIcon {
+  width: 56px;
+  height: 56px;
+  border-radius: 16px;
+  background: rgba(31, 113, 255, 0.12);
+  display: grid;
+  place-items: center;
+  color: #1f71ff;
+  font-size: 26px;
+}
+
+@media (max-width: 575px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+
+  .actions {
+    width: 100%;
+  }
+
+  .newProposalButton {
+    width: 100%;
+  }
+}
